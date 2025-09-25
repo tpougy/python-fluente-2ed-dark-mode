@@ -1,0 +1,279 @@
+/* ==UserStyle==
+@name           pythonfluente.com/2/
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    A new userstyle
+@author         Me
+==/UserStyle== */
+@-moz-document domain("pythonfluente.com") {
+  /**
+     * ===================================================================
+     * TEMA DARK MODE v3.0 para PYTHON FLUENTE 2E
+     * ===================================================================
+     * Refatorado para usar Variáveis CSS para fácil customização.
+     */
+  :root {
+    /* Paleta de Cores Principal */
+    --bg-primary: #1e1e1e;
+    --bg-secondary: #2a2a2e;
+    --bg-tertiary: #333;
+    --bg-ui-element: #262b33;
+
+    --text-primary: #cccccc;
+    --text-bright: #ffffff;
+    --text-muted: #888;
+    --text-subtle: #a0a0a0;
+
+    --accent-primary: #58a6ff;
+    --accent-secondary: #ff8975;
+    --accent-hover: #8cc3ff;
+    --accent-visited: #c58af9;
+
+    --border-primary: #444;
+    --border-secondary: #555;
+
+    --highlight-bg: #d7ba7d;
+    --error-bg: #ff444455;
+
+    /* Destaque de Sintaxe (Syntax Highlighting) */
+    --syntax-bg: #282c34;
+    --syntax-text: #abb2bf;
+    --syntax-keyword: #c678dd;
+    --syntax-string: #98c379;
+    --syntax-number: #d19a66;
+    --syntax-function: #61afef;
+    --syntax-operator: #56b6c2;
+    --syntax-comment: #7f848e;
+  }
+
+  /* --- [1] GERAL: Fundo, Texto e Seleção --- */
+  body,
+  #header,
+  #content,
+  div.content,
+  div.sect1 {
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+  }
+
+  /* Cor de texto selecionado */
+  ::selection {
+    background-color: var(--accent-primary) !important;
+    color: var(--bg-primary) !important;
+  }
+
+  /* --- [2] CABEÇALHOS e TÍTULOS --- */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  #toctitle,
+  .title,
+  caption.title {
+    color: var(--text-bright) !important;
+    border-bottom-color: var(--border-primary) !important;
+  }
+
+  /* Cores específicas de títulos e links vermelhos */
+  h2,
+  h3,
+  h4,
+  div.title,
+  a.link,
+  div#toctitle {
+    color: var(--accent-secondary) !important;
+  }
+
+  /* --- [3] LINKS --- */
+  a,
+  a:link {
+    color: var(--accent-primary) !important;
+  }
+
+  a:visited {
+    color: var(--accent-visited) !important;
+  }
+
+  a:hover,
+  a:active {
+    color: var(--accent-hover) !important;
+    text-decoration: underline !important;
+  }
+
+  /* --- [4] TABELAS --- */
+  table,
+  thead,
+  tbody,
+  tr,
+  td,
+  th {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-secondary) !important;
+  }
+  thead,
+  th.tableblock {
+    background-color: var(--bg-tertiary) !important;
+    color: var(--text-bright) !important;
+  }
+
+  /* --- [5] ELEMENTOS ESPECÍFICOS --- */
+  /* Blocos laterais (Sidebars) e de Admonition */
+  div.sidebarblock,
+  div.admonitionblock {
+    background-color: var(--bg-ui-element) !important;
+    border-color: var(--border-secondary) !important;
+  }
+
+  /* Tabela de conteúdo (Sumário) */
+  #toc.toc2 {
+    background-color: var(--bg-secondary) !important;
+    border: 1px solid var(--border-primary) !important;
+  }
+
+  /* Texto destacado com <mark> (fundo amarelo) */
+  mark {
+    background-color: var(--highlight-bg) !important;
+    color: var(--bg-primary) !important;
+  }
+
+  /* Linhas divisórias */
+  hr {
+    border-color: var(--border-primary) !important;
+  }
+
+  /* Rodapé */
+  div#footer-text {
+    color: var(--text-muted) !important;
+  }
+
+  div.sidebarblock .content {
+    background-color: transparent !important;
+  }
+
+  /* Legendas de Imagens */
+  div.imageblock .title {
+    margin-top: 1em !important;
+  }
+
+  /* --- [6] BLOCOS DE CÓDIGO (SYNTAX HIGHLIGHTING) --- */
+  /* Fundo geral para blocos de código */
+  pre,
+  code,
+  pre.rouge.highlight {
+    background-color: var(--syntax-bg) !important;
+    color: var(--syntax-text) !important;
+    border-radius: 5px;
+  }
+
+  /* Palavras-chave (def, class, import) */
+  pre .k,
+  pre .kn,
+  pre .kd {
+    color: var(--syntax-keyword) !important;
+  }
+
+  /* Strings */
+  pre .s,
+  pre .s1,
+  pre .s2,
+  pre .sh,
+  pre .sa,
+  pre .se,
+  pre .dl,
+  pre .sb {
+    color: var(--syntax-string) !important;
+  }
+
+  /* Números */
+  pre .mi,
+  pre .mf,
+  pre .mh {
+    color: var(--syntax-number) !important;
+  }
+
+  /* Nomes de funções e classes */
+  pre .nf,
+  pre .nc,
+  pre .nd,
+  pre .nb {
+    color: var(--syntax-function) !important;
+  }
+
+  /* Operadores (=, +, *) e built-ins (print, len) */
+  pre .o,
+  pre .ow,
+  pre .bp,
+  pre .kc {
+    color: var(--syntax-operator) !important;
+  }
+
+  /* Comentários */
+  pre .c1,
+  pre .c {
+    color: var(--syntax-comment) !important;
+    font-style: italic;
+  }
+
+  /* Outros nomes e variáveis */
+  pre .n,
+  pre .nv,
+  pre .nl,
+  pre .na,
+  pre .nt {
+    color: var(--syntax-text) !important;
+  }
+
+  /* Erros e outros */
+  pre .err {
+    background-color: var(--error-bg) !important;
+  }
+
+  /* Números de chamada (callouts) */
+  b.conum {
+    color: var(--text-bright) !important;
+    background-color: var(--accent-primary) !important;
+    border-radius: 50%;
+  }
+
+  /* --- [7] BLOCOS DE CITAÇÃO (QUOTES) --- */
+  div.quoteblock,
+  div.quoteblock blockquote,
+  div.quoteblock p {
+    color: var(--text-primary) !important;
+  }
+
+  div.quoteblock .attribution,
+  div.quoteblock .attribution cite {
+    color: var(--text-subtle) !important;
+    font-style: italic;
+  }
+
+  /* --- [8] INVERSÃO DE IMAGENS (DIAGRAMAS) --- */
+  img {
+    filter: invert(1) !important;
+    mix-blend-mode: screen !important;
+  }
+
+  /* --- [9] BLOCOS DE EXEMPLO --- */
+  div.exampleblock .title {
+    margin-bottom: 1em !important;
+  }
+  div.exampleblock .content {
+    border-color: var(--border-primary) !important;
+    box-shadow: 0 0 2px 1px var(--border-primary) !important;
+  }
+
+  /* --- [10] OUTROS --- */
+  /* Autor */
+  .author {
+    color: var(--text-primary) !important;
+  }
+
+  /* Dedicatória */
+  em {
+    color: var(--text-primary) !important;
+  }
+}
