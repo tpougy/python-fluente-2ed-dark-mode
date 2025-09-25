@@ -1,5 +1,7 @@
 # python-fluente-2ed-dark-mode
 
+![preview](./preview.png)
+
 Para Add-On Stylus: estilo Dark Mode para o site que contém o conteúdo do livro Python Fluente 2a Ed.. Acesse em: [Python Fluente, Segunda Edição (2023)](https://pythonfluente.com/2/)
 
 Antes de mais nada, gostaria de deixar meu gigantesco agradecimento ao Luciano Ramalho por esta obra incrível e, principalmente, por disponibilizá-la gratuitamente. É um recurso de valor inestimável para a comunidade.
