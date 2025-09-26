@@ -256,14 +256,19 @@
   }
 
   /* --- [7] BLOCOS DE CITAÇÃO (QUOTES) --- */
+
+  /* Regra geral para todo texto dentro de blockquotes e quoteblocks */
   div.quoteblock,
-  div.quoteblock blockquote,
-  div.quoteblock p {
+  blockquote,
+  div.quoteblock p,
+  blockquote p {
     color: var(--text-primary) !important;
   }
 
+  /* Regra específica para atribuições (cobre os dois padrões do site) */
   div.quoteblock .attribution,
-  div.quoteblock .attribution cite {
+  div.quoteblock .attribution cite,
+  blockquote p[data-type="attribution"] {
     color: var(--text-subtle) !important;
     font-style: italic;
   }
